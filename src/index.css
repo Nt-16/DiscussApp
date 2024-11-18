@@ -66,3 +66,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Light mode (default) */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --primary-color: #3f51b5; /* Blue */
+  --button-color: #6200ea;
+}
+
+/* Dark mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: white;
+  --primary-color: #bb86fc; /* Light purple */
+  --button-color: #3700b3;
+}
+
+/* Global styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-color);
+}
+
+/* More styles can be added */

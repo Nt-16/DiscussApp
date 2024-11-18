@@ -155,7 +155,7 @@ const Homepage = () => {
           <Link to="/createpost" style={{ textDecoration: "none", color: "white" }}>
             <Button color="inherit">Create Post</Button>
           </Link>
-          {/* Search Bar */}
+          
           
         </Toolbar>
       </AppBar>

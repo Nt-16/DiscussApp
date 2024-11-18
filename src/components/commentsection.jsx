@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { TextField, Button, Box, Typography } from "@mui/material";
 import supabase from "/supabase.js"; // Your Supabase client
 import PropTypes from 'prop-types'
-
+import {  useNavigate } from "react-router-dom";
 const CommentSection = ({ postId }) => {
   const [comment, setComment] = useState(""); // State for storing comment input
   const [comments, setComments] = useState([]); // State to store existing comments
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   // Fetch existing comments when the component mounts
   useEffect(() => {
@@ -42,6 +43,7 @@ const CommentSection = ({ postId }) => {
     } else {
       setComments((prevComments) => [...prevComments, data[0]]); // Update UI with new comment
       setComment(""); // Clear the input
+      navigate('/')
     }
     setLoading(false);
   };
