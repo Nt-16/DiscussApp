@@ -61,23 +61,42 @@ const CreatePost = ({ onPostCreated }) => {
     },
   }));
 
+  const homepageStyle = {
+    backgroundImage: "url('/public/wallpaper.jpg')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    
+    
+  };
+  const homepageStyle2 = {
+    backgroundImage: "url('/public/vintage1.jpg')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    height: '100vh',
+    
+  };
+
   return (
-    <Box height='100vh' width='100vw'>
-      <AppBar position="static">
+    <Box height='100vh' width='100vw' style={homepageStyle2} >
+      <AppBar position="static" color='string'>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Discussion Forum
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
+            PostMe
           </Typography>
-          <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-             <Button color="inherit">Explore</Button>
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+             <Button color="inherit"><strong>Explore</strong></Button>
            </Link>
-           <Link to="/createpost" style={{ textDecoration: 'none', color: 'white' }}>
-             <Button color="inherit">Create Post</Button>
+           <Link to="/createpost" style={{ textDecoration: 'none', color: 'black' }}>
+             <Button color="inherit"><strong>Create Post</strong></Button>
            </Link>
         </Toolbar>
       </AppBar>
 
-      <Box margin='50px' border='solid' borderRadius={5} sx={{ padding: 2 }}>
+      <Box margin='90px' height='50vh' border='solid' borderRadius={5} sx={{ padding: 2 , boxShadow: '0px 10px 20px rgba(0,0,0,0.4)'}}
+      style={homepageStyle}
+      >
         <Typography variant="h4" gutterBottom>
           Create a New Post
         </Typography>

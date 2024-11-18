@@ -132,16 +132,36 @@ const Homepage = () => {
       setPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
     }
   };
+  const homepageStyle = {
+    backgroundImage: "url('/public/wallpaper.jpg')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'repeat',
+    backgroundPosition: 'center',
+    height: '100%',
+    
+  };
+  const homepageStyle2 = {
+    backgroundImage: "url('/public/wallpaper.jpg')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    
+    
+  };
 
   return (
-    <Box height="100vh" width="100vw">
+    <Box height="100vh" width="100vw" style={homepageStyle}
+    
+    >
       {/* Navigation Bar */}
-      <AppBar position="static">
+      <AppBar position="static" color="string">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Discussion Forum
+            PostMe
           </Typography>
           <TextField
+            textDecoration='red'
+            color="black"
             variant="outlined"
             size="small"
             label="Search"
@@ -149,11 +169,11 @@ const Homepage = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             
           />
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Explore</Button>
+          <Link to="/" style={{ textDecoration: "underline", color: "black" }}>
+            <Button color="inherit"><strong>Explore</strong></Button>
           </Link>
-          <Link to="/createpost" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Create Post</Button>
+          <Link to="/createpost" style={{ textDecoration: "underline", color: "black" }}>
+            <Button color="inherit"><strong>Create Post</strong></Button>
           </Link>
           
           
@@ -187,7 +207,7 @@ const Homepage = () => {
           <Grid container spacing={4} marginTop={3}>
             {sortedPosts.map((post) => (
               <Grid item xs={12} sm={6} md={4} key={post.id}>
-                <Card>
+                <Card style={homepageStyle2} sx={{boxShadow: '0px 10px 20px rgba(0,0,0,0.4)'}}>
                   {/* Post Image */}
                   {post.image_url && (
                     <CardMedia
@@ -212,12 +232,12 @@ const Homepage = () => {
                     >
                       <ThumbUpIcon />
                     </IconButton>
-                    <Typography>{post.upvotes} Upvotes</Typography>
+                    <Typography><strong>{post.upvotes}</strong> Likes</Typography>
                     <Button size="small" color="primary" onClick={() => navigate(`/post/${post.id}`)}>
                       Read More
                     </Button>
                     <Button size="small" color="secondary" onClick={() => navigate(`/editpost/${post.id}`)}>
-                      Edit
+                      <strong>Edit</strong>
                     </Button>
 
                     <IconButton

@@ -36,23 +36,32 @@ const PostDetails = () => {
     return <CircularProgress />;
   }
 
+  const homepageStyle = {
+    backgroundImage: "url('/public/wallpaper.jpg')",
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    height: '100vh',
+    
+  };
+
   return (
     <Box height='100vh' width='100vw'>
-        <AppBar position="static">
+        <AppBar position="static" color='string'>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Discussion Forum
+            PostMe
           </Typography>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Explore</Button>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Button color="inherit"><strong>Explore</strong></Button>
           </Link>
-          <Link to="/createpost" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Create Post</Button>
+          <Link to="/createpost" style={{ textDecoration: "none", color: "black" }}>
+            <Button color="inherit"><strong>Create Post</strong></Button>
           </Link>
         </Toolbar>
       </AppBar>
 
-        <Box sx={{ padding: 4 }}>
+        <Box sx={{ padding: 4 }} style={homepageStyle}>
         {post && (
         <div>
             {/* Display post image if it exists */}

@@ -76,7 +76,7 @@ const CommentSection = ({ postId }) => {
         onClick={handleCommentSubmit}
         disabled={loading}
       >
-        {loading ? "Submitting..." : "Submit"}
+        {loading ? "Submitting..." : "Submit"} 
       </Button>
     </Box>
   );
